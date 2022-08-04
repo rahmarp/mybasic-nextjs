@@ -1,5 +1,4 @@
-import { useRouter } from "next/router"
-import Layout from "../../components/Layout"
+import Layout from '../../components/Layout'
 
 interface User {
   id: number;
@@ -15,7 +14,7 @@ interface UserDetailProps {
 function UserDetail(props: UserDetailProps) {
   const { user } = props
   return (
-    <Layout>
+    <Layout pageTitle="User Page">
       <p>{user.name} </p>
       <p>{user.email} </p>
       <p>{user.phone} </p>
@@ -28,7 +27,7 @@ export async function getStaticPaths() {
   const res = await fetch('https://jsonplaceholder.typicode.com/users')
   const dataUsers = await res.json()
 
-  const paths = dataUsers.map((user) => ({
+  const paths = dataUsers.map((user: any) => ({
     params: {
       id: `${user.id}`,
     },
@@ -40,7 +39,7 @@ export async function getStaticPaths() {
 }
 
 interface GetStaticProps {
-  params :{
+  params: {
     id: string;
   }
 }

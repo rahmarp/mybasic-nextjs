@@ -1,5 +1,5 @@
-import Layout from "../components/Layout";
-import styles from "../styles/Blog.module.css";
+import Layout from '../components/Layout';
+import styles from '../styles/Blog.module.css';
 
 interface Post {
   id: number;

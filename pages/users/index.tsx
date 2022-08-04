@@ -13,7 +13,7 @@ export default function Users(props: UserProps) {
     <Layout pageTitle="User Page">
       {dataUsers.map((user) => {
         return (
-          <div key={user.id} onClick={() => router.push(`/users/${user.id}`)} className={styles.card}>
+          <div key={user.id} onClick={() => router.push(`/users/${user.id}`)} onKeyDown={() => router.push(`/users/${user.id}`)} className={styles.card}> {/* eslint-disable-line */}
             <p>{user.name}</p>
             <p>{user.email}</p>
           </div>
